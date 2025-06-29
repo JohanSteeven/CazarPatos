@@ -8,6 +8,7 @@ import android.widget.CheckBox
 import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.security.crypto.EncryptedSharedPreferences
 
 class LoginActivity : AppCompatActivity() {
     lateinit var manejadorArchivo: FileHandler
@@ -33,7 +34,8 @@ class LoginActivity : AppCompatActivity() {
         buttonLogin = findViewById(R.id.buttonLogin)
         buttonNewUser = findViewById(R.id.buttonNewUser)
         //  manejadorArchivo = SharedPreferencesManager(this)
-        manejadorArchivo = EncryptedSharedPreferencesManager(this)
+       // manejadorArchivo = EncryptedSharedPreferencesManager(this)
+        manejadorArchivo = ExternalFileManager(this)
         checkBoxRecordarme = findViewById(R.id.checkBoxRecordarme)
 
         LeerDatosDePreferencias()
